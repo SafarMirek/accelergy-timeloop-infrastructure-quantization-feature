@@ -22,7 +22,9 @@ cd timeloop-accelergy
 git clone --recurse-submodules https://github.com/honzastor/accelergy-timeloop-infrastructure-quantization-feature.git
 ```
 
-2. Install it. For detailed installation guide (continue after the git clone command) along with the list of required dependencies see [here](https://accelergy.mit.edu/infra_instructions.html)
+2. Install it. For detailed installation guide (continue after the git clone command) along with the list of required dependencies see [here](https://accelergy.mit.edu/infra_instructions.html).  **OPTIONAL NOTE**: To succesfully build and use the **timeloop-python** API interface, the shared libraries should be build **dynamically** instead of statically, so use: **scons -j4 --accelergy** instead of **scons -j4 --accelergy --static**.
+
+	**OPTIONAL:** To install the Timeloop for Python API, run the `build_pytimeloop.py` script using **older version of Python** (successfully tested on version **3.8**).
 
 3. Test it. Once it is done, you can check successful installation by running the binaries from any location, i.e.:
 ```bash
@@ -32,6 +34,9 @@ accelergyTables
 timeloop-mapper
 timeloop-model
 timeloop-metrics
+
+# OPTIONAL PYTHON API
+timeloop-model.py --help
 ```
 
 4. The `quantization-exercises` folder contains some test scenarios to show the evaluation of workloads both with and without quantization on chosen HW architectures. Feel free to explore them and modify them to your needs and experiments.

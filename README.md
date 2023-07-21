@@ -49,7 +49,7 @@ To work with the updated Timeloop+Accelergy locally, you must first download the
 
 	# OPTIONAL PYTHON API
 	timeloop-model.py --help
-      timeloop-mapper.py --help
+	timeloop-mapper.py --help
 	```
 
 4. The `quantization-exercises` folder contains some test scenarios to show the evaluation of workloads both with and without quantization on chosen HW architectures. Feel free to explore them and modify them to your needs and experiments.

@@ -58,7 +58,7 @@ RUN apt-get update \
 #
 # Main image
 #
-FROM ubuntu:20.04
+FROM tensorflow/tensorflow:2.11.0-gpu
 
 LABEL maintainer="timeloop-accelergy@mit.edu"
 
@@ -189,6 +189,12 @@ RUN apt-get update \
 # Ruamel yaml
 RUN pip3 install ruamel.yaml
 
+# Install dependencies for timetool_interface
+RUN pip3 install torch
+RUN pip3 install torchvision
+
+# Copy timetool_interface lib 
+COPY quantization-exercises/timeloop_interface /home/workspace/timeloop_interface
 
 # Set up entrypoint
 
